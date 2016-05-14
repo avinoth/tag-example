@@ -4,7 +4,11 @@ class CompaniesController < ApplicationController
   # GET /companies
   # GET /companies.json
   def index
-    @companies = Company.all.limit(10)
+    if params[:tags]
+      @companies = Company.tagged(params[:tags])
+    else
+      @companies = Company.all.limit(10)
+    end
   end
 
   # GET /companies/1

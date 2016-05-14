@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'tags/autocomplete'
+
   resources :companies
   root 'companies#index'
   # The priority is based upon order of creation: first created -> highest priority.
